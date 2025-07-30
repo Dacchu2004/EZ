@@ -1,0 +1,93 @@
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color:  #1d1d1d;
+  border-bottom: 1px solid #ddd;
+
+}
+
+
+ .logo img {
+    height: 28px;
+
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
+.btn2 {
+     text-decoration: none;
+    padding: 3px 13px;
+ 
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 14px;
+    border: 2px solid red;
+    color: white !important;
+   
+}
+.flag-circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flag-circle img {
+  width: 100%;
+  height: auto;
+}
+
+/* Define the pulse animation */
+        @keyframes pulse {
+          0% {
+            transform: scale(1);
+            box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7); /* Red color for shadow */
+          }
+          70% {
+            transform: scale(1.05);
+            box-shadow: 0 0 0 10px rgba(220, 38, 38, 0);
+          }
+          100% {
+            transform: scale(1);
+            box-shadow: 0 0 0 0 rgba(220, 38, 38, 0);
+          }
+        }
+
+        .pulse-button-container {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+      height: 20;
+          background-color: #1a202c; /* Dark background for contrast */
+          font-family: 'Inter', sans-serif;
+        }
+
+        .red-pulse-button {
+           text-decoration: none;
+     padding: 5px 10px;
+  background-color: red;
+  border-color: 1.5px solid red;
+  color: white;
+  border-radius: 5px;
+  font-weight: 500;
+  font-size: 14px;
+  font-size: medium;
+          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+          transition: background-color 0.3s ease;
+          animation: pulse 2s infinite; /* Apply the pulse animation */
+        }
+
+        .red-pulse-button:hover {
+          background-color: #b91c1c; /* Darker red on hover */
+        }

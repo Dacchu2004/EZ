@@ -1,0 +1,32 @@
+.news-ticker-wrapper {
+  width: 100%;
+  overflow: hidden;
+  background-color: #000;
+  padding: 10px 0;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.news-ticker {
+  display: inline-block;
+  white-space: nowrap;
+  padding-left: 100%; /* Start offscreen to the right */
+  animation: scroll-left 15s linear infinite;
+}
+
+.news-ticker span {
+  font-weight: bold;
+  font-size: clamp(14px, 2.5vw, 18px); /* Responsive font size */
+  color: red;
+  padding-right: 2rem;
+}
+
+/* Animation for ticker */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}

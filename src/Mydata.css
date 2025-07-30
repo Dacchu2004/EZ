@@ -1,0 +1,151 @@
+.overview-container {
+  background-color: black;
+  padding: 2rem;
+  min-height: 100vh;
+  color: white;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+.overview-title {
+  color: white;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Responsive Card Grid */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background-color: black;
+  border: 1px solid red;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.2);
+}
+
+.cardd {
+  margin-top: 20px;
+  background-color: black;
+  border: 1px solid red;
+  border-radius: 8px;
+  padding: 20px;
+  color: white;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.2);
+}
+
+.card-title {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.card-value {
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+}
+
+.mydata-container {
+  background-color: black;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  color: white;
+  box-sizing: border-box;
+}
+
+.tab-btn {
+  padding: 10px 20px;
+  border: 1px solid red;
+  background-color: black;
+  color: white;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+  flex: 1;
+  min-width: 90px;
+}
+
+.tab-btn.active {
+  background-color: red;
+  border: none;
+}
+
+.tab-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.summary-box {
+  background: linear-gradient(to bottom, #1a1a1a, #000);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.income-bar {
+  background-color: red;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 20px;
+  font-size: 15px;
+}
+
+/* Responsive Summary Grid */
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 20px;
+  padding-top: 10px;
+}
+
+.summary-item {
+  text-align: center;
+  font-size: 14px;
+  word-wrap: break-word;
+}
+
+.summary-item strong {
+  display: block;
+  margin-top: 5px;
+  font-size: 15px;
+}
+
+/* Extra mobile optimization */
+@media (max-width: 400px) {
+  .overview-title {
+    font-size: 20px;
+  }
+
+  .tab-btn {
+    font-size: 14px;
+    padding: 8px 10px;
+  }
+
+  .income-bar {
+    font-size: 13px;
+  }
+
+  .summary-item {
+    font-size: 13px;
+  }
+
+  .summary-item strong {
+    font-size: 14px;
+  }
+
+  .card-value {
+    font-size: 16px;
+  }
+}

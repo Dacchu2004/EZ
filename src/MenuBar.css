@@ -1,0 +1,130 @@
+/* MenuBar.css */
+
+        /* Base container for the entire UI */
+        .menu-bar-container {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+         
+          background-color: #000000; /* Equivalent to bg-gray-900 */
+          font-family: 'Inter', sans-serif; /* Using Inter font */
+        }
+.category-card span:first-child {
+    font-size: 22px;
+    margin-bottom: 0.5rem;
+}
+        /* Container for the horizontal scrollable section */
+        .scroll-section-wrapper {
+          position: relative;
+       
+          max-width:315px; /* Equivalent to max-w-4xl */
+        
+          padding-left: 1rem; /* Equivalent to px-4 */
+          /* Equivalent to px-4 */
+        }
+
+        /* Scroll arrow buttons */
+        .scroll-arrow-button {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          padding: 0; /* Equivalent to p-2 */
+          /* Equivalent to rounded-full */
+          background-color: #141414; /* Equivalent to bg-gray-700 */
+          color: #fff; /* Equivalent to text-white */
+          cursor: pointer;
+          z-index: 10;
+          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* Equivalent to shadow-lg */
+          transition: background-color 200ms ease-in-out; /* Equivalent to transition-colors duration-200 */
+          border: none;
+          outline: none;
+          height: 50px;
+
+        }
+button {
+    border-radius: 0px;
+  
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #1a1a1a;
+    cursor: pointer;
+    transition: border-color 0.25s;
+}
+        .scroll-arrow-button:hover {
+          background-color: #141414; /* Equivalent to hover:bg-gray-600 */
+        }
+
+        .scroll-arrow-button:focus {
+          outline: 2px solid #6b7280; /* Equivalent to focus:ring-2 focus:ring-gray-500 */
+          outline-offset: 2px;
+        }
+
+        .scroll-arrow-button.left {
+          left: -8.5px;
+        }
+
+        .scroll-arrow-button.right {
+          right: -15px;
+        }
+
+        .scroll-arrow-button svg {
+          height: 1.5rem; /* Equivalent to h-6 */
+          width: 1.5rem; /* Equivalent to w-6 */
+        }
+
+        /* Scrollable container for game categories */
+        .categories-scroll-container {
+          display: flex;
+          padding: 1rem; /* Equivalent to p-4 */
+          gap:5px;
+          overflow-x: scroll;
+          scroll-snap-type: x mandatory;
+          -ms-overflow-style: none;  /* IE and Edge */
+          scrollbar-width: none;  /* Firefox */
+        }
+
+        .categories-scroll-container::-webkit-scrollbar {
+          display: none;  /* Chrome, Safari, Opera */
+        }
+
+        /* Individual category card */
+        .category-card {
+          flex-shrink: 0; /* Equivalent to flex-shrink-0 */
+         width: 50px;
+    height: 50px; /* Equivalent to h-32 */
+          border-radius: 8px; /* Equivalent to rounded-xl */
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          color: #fff; /* Equivalent to text-white */
+          font-size: 8px; /* Equivalent to text-sm */
+          
+          cursor: pointer;
+          transition: all 200ms ease-in-out; /* Equivalent to transition-all duration-200 */
+          box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06); /* Equivalent to shadow-md */
+          scroll-snap-align: start;
+        }
+
+        .category-card.hot-games {
+          background-color: #141414; 
+        }
+
+        .category-card.hot-games:hover {
+          background-color: #b91c1c; 
+        }
+
+        .category-card:not(.hot-games) {
+          background-color: #141414; /* Equivalent to bg-gray-800 */
+        }
+
+        .category-card:not(.hot-games):hover {
+          background-color: #b91c1c; /* Equivalent to hover:bg-gray-700 */
+        }
+
+        .category-card span:first-child {
+    font-size: 28px;
+    margin-bottom: -0.5rem;
+}
