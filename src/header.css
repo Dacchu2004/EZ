@@ -2,92 +2,94 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
-  background-color:  #1d1d1d;
-  border-bottom: 1px solid #ddd;
-
+  padding: 10px 12px;
+  background: #232323;
+  border-bottom: 3px solid #e52d2d;
 }
 
-
- .logo img {
-    height: 28px;
-
-}
-
-.header-actions {
+.header-left {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-
-.btn2 {
-     text-decoration: none;
-    padding: 3px 13px;
- 
-    border-radius: 5px;
-    font-weight: 500;
-    font-size: 14px;
-    border: 2px solid red;
-    color: white !important;
-   
+.header-logo {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background: #e52d2d;
+  padding: 2px;
 }
-.flag-circle {
-  width: 32px;
-  height: 32px;
+
+.header-user-btn {
+  background: #2563eb;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 4px;
+}
+.header-user-btn img {
+  width: 24px;
+  height: 24px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.header-signup {
+  background: #e52d2d;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 7px 18px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.header-login {
+  background: transparent;
+  color: #fff;
+  border: 2px solid #e52d2d;
+  border-radius: 8px;
+  padding: 7px 18px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.header-flag {
+  margin-left: 6px;
   border-radius: 50%;
   overflow: hidden;
-  border: 2px solid #ccc;
+  border: 2px solid #fff;
+  width: 32px;
+  height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
-.flag-circle img {
+.header-flag img {
   width: 100%;
   height: auto;
 }
 
-/* Define the pulse animation */
-        @keyframes pulse {
-          0% {
-            transform: scale(1);
-            box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7); /* Red color for shadow */
-          }
-          70% {
-            transform: scale(1.05);
-            box-shadow: 0 0 0 10px rgba(220, 38, 38, 0);
-          }
-          100% {
-            transform: scale(1);
-            box-shadow: 0 0 0 0 rgba(220, 38, 38, 0);
-          }
-        }
+/* Mobile-first: everything fits in a row, touch-friendly. */
 
-        .pulse-button-container {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-      height: 20;
-          background-color: #1a202c; /* Dark background for contrast */
-          font-family: 'Inter', sans-serif;
-        }
-
-        .red-pulse-button {
-           text-decoration: none;
-     padding: 5px 10px;
-  background-color: red;
-  border-color: 1.5px solid red;
-  color: white;
-  border-radius: 5px;
-  font-weight: 500;
-  font-size: 14px;
-  font-size: medium;
-          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-          transition: background-color 0.3s ease;
-          animation: pulse 2s infinite; /* Apply the pulse animation */
-        }
-
-        .red-pulse-button:hover {
-          background-color: #b91c1c; /* Darker red on hover */
-        }
+@media (min-width: 600px) {
+  .header-row {
+    padding: 16px 32px;
+  }
+  .header-logo {
+    height: 48px;
+    width: 48px;
+  }
+  .header-flag {
+    width: 36px;
+    height: 36px;
+  }
+}

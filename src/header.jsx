@@ -1,26 +1,24 @@
 import React from 'react';
 import './Header.css';
+import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
+  const navigate = useNavigate();
   return (
-    <div className="header-row">
-       <div className="logo">
+    <header className="header-row">
+      <div className="logo">
         <img src="https://www.dis88tonight.com/dis88/img/dis88_logo.png?v=4" alt="Logo" />
         <img src="/gift-icon.png" alt="Gift" />
         <img src="/signup-icon.png" alt="Signup" />
       </div>
-      <div className="header-actions">
-        <div className="pulse-button-container">
-        <button className="red-pulse-button">
-          Sign up
-        </button>
-      </div>
-        <a href="#" className="btn2">Login</a>
-        <div className="flag-circle">
-          <img src="https://d2a18plfx719u2.cloudfront.net/frontend/flags/my.png?v=1" alt="Flag" />
+      <div className="header-right">
+        <button className="header-signup" onClick={() => navigate('/signup')}>SIGN UP</button>
+        <button className="header-login" onClick={() => navigate('/login')}>LOGIN</button>
+        <div className="header-flag">
+          <img src="/public/flag.jpg" alt="MY Flag" />
         </div>
       </div>
-    </div>
+    </header>
   );
 };
 

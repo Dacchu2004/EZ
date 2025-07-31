@@ -13,9 +13,7 @@ import {
   FaUserShield,
   FaLock,
   FaWallet,
-  FaStar,
-  FaBell,
-  FaHandshake,
+  FaUniversity,
   FaSignOutAlt,
   FaRedo
 } from 'react-icons/fa';
@@ -34,9 +32,7 @@ const AccountPage = () => {
     { icon: <FaUserShield />, label: 'My Profile', action: () => navigate('/profile') },
     { icon: <FaLock />, label: 'Security Center', action: () => navigate('/security') },
     { icon: <FaWallet />, label: 'Wallet' },
-    { icon: <FaStar />, label: 'Reward Center' },
-    { icon: <FaBell />, label: 'Notifications' },
-    { icon: <FaHandshake />, label: 'Affiliate' }
+    { icon: <FaUniversity />, label: 'Bank Account', action: () => navigate('/bank-account') }
   ];
 
   return (

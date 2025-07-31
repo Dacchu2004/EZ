@@ -14,6 +14,9 @@ import Mydata from "./Mydata";
 import AccountPage from "./AccountPage";
 import Profile from "./Profile";
 import SecurityCenter from "./SecurityCenter";
+import SignupPage from "./SignupPage";
+import LoginPage from "./LoginPage";
+import BankAccountPage from "./BankAccountPage";
 
 // Carousel Images
 const carouselImages = [
@@ -50,7 +53,6 @@ function Layout() {
         <Route path="/referral" element={<ReferralPage />} />
         <Route path="/wallet" element={<WalletScreen />} />
         <Route path="/Mydata" element={<Mydata />} />
-        <Route path="/account" element={<AccountPage />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/security" element={<SecurityCenter />} />
       </Routes>
@@ -81,7 +83,13 @@ function Layout() {
 function App() {
   return (
     <Router>
-      <Layout />
+      <Routes>
+        <Route path="/signup" element={<SignupPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/account" element={<AccountPage />} />
+        <Route path="/bank-account" element={<BankAccountPage />} />
+        <Route path="/*" element={<Layout />} />
+      </Routes>
     </Router>
   );
 }
