@@ -31,7 +31,7 @@ const AccountPage = () => {
   const menuItems = [
     { icon: <FaUserShield />, label: 'My Profile', action: () => navigate('/profile') },
     { icon: <FaLock />, label: 'Security Center', action: () => navigate('/security') },
-    { icon: <FaWallet />, label: 'Wallet' },
+    { icon: <FaWallet />, label: 'Wallet', action: () => navigate('/wallet') },
     { icon: <FaUniversity />, label: 'Bank Account', action: () => navigate('/bank-account') }
   ];
 
