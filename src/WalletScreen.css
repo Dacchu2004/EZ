@@ -1,0 +1,611 @@
+/* Wallet Screen - Mobile First Responsive Design */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.wallet-container {
+  height: 100vh;
+  width: 100vw;
+  background: #000000;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Wallet Header */
+.wallet-header {
+  padding: 20px 16px 16px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.wallet-header h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Total Amount Section */
+.total-amount-section {
+  padding: 0 16px 16px;
+  flex-shrink: 0;
+}
+
+.total-amount-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+}
+
+.back-button {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.back-button:active {
+  transform: translateY(-50%) scale(0.95);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.back-arrow {
+  font-size: 18px;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.total-amount-info {
+  text-align: center;
+  flex: 1;
+  margin: 0 60px;
+}
+
+.total-amount-label {
+  margin: 0 0 8px 0;
+  font-size: 14px;
+  color: #ffffff;
+  font-weight: 400;
+}
+
+.total-amount-value {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.refresh-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.refresh-symbol {
+  font-size: 18px;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+/* Slot Section */
+.slot-section {
+  padding: 0 16px 24px;
+  flex-shrink: 0;
+}
+
+.slot-header {
+  margin-bottom: 16px;
+}
+
+.slot-header h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.slot-providers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+/* Live Casino Section */
+.live-casino-section {
+  padding: 0 16px 24px;
+  flex-shrink: 0;
+}
+
+.live-casino-header {
+  margin-bottom: 16px;
+}
+
+.live-casino-header h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.live-casino-providers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+/* 7-11 Section */
+.seven-eleven-section {
+  padding: 0 16px 24px;
+  flex-shrink: 0;
+}
+
+.seven-eleven-header {
+  margin-bottom: 16px;
+}
+
+.seven-eleven-header h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.seven-eleven-providers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+/* Fast Game Section */
+.fast-game-section {
+  padding: 0 16px 24px;
+  flex-shrink: 0;
+}
+
+.fast-game-header {
+  margin-bottom: 16px;
+}
+
+.fast-game-header h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.fast-game-providers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+/* Fishing Section */
+.fishing-section {
+  padding: 0 16px 24px;
+  flex-shrink: 0;
+}
+
+.fishing-header {
+  margin-bottom: 16px;
+}
+
+.fishing-header h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.fishing-providers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+/* Sports Section */
+.sports-section {
+  padding: 0 16px 24px;
+  flex-shrink: 0;
+}
+
+.sports-header {
+  margin-bottom: 16px;
+}
+
+.sports-header h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.sports-providers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+/* Esport Section */
+.esport-section {
+  padding: 0 16px 24px;
+  flex-shrink: 0;
+}
+
+.esport-header {
+  margin-bottom: 16px;
+}
+
+.esport-header h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.esport-providers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+/* Lottery Section */
+.lottery-section {
+  padding: 0 16px 24px;
+  flex-shrink: 0;
+}
+
+.lottery-header {
+  margin-bottom: 16px;
+}
+
+.lottery-header h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.lottery-providers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+/* Card Game Section */
+.card-game-section {
+  padding: 0 16px 24px;
+  flex-shrink: 0;
+}
+
+.card-game-header {
+  margin-bottom: 16px;
+}
+
+.card-game-header h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.card-game-providers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+/* Cockfight Section */
+.cockfight-section {
+  padding: 0 16px 24px;
+  flex-shrink: 0;
+}
+
+.cockfight-header {
+  margin-bottom: 16px;
+}
+
+.cockfight-header h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.cockfight-providers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+/* Provider Card Styles */
+.provider-card {
+  background: #2a2a2a;
+  border-radius: 12px;
+  padding: 16px 12px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  min-height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+}
+
+.provider-card:active {
+  transform: scale(0.95);
+  background: #3a3a3a;
+}
+
+.provider-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+}
+
+.provider-balance {
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-top: auto;
+  line-height: 1.2;
+}
+
+/* Bottom Spacing */
+.bottom-spacing {
+  height: 100px;
+  flex-shrink: 0;
+}
+
+/* Mobile Responsive - Primary Focus */
+@media (max-width: 480px) {
+  .wallet-header h1 {
+    font-size: 22px;
+  }
+  
+  .slot-providers-grid,
+  .live-casino-providers-grid,
+  .seven-eleven-providers-grid,
+  .fast-game-providers-grid,
+  .fishing-providers-grid,
+  .sports-providers-grid,
+  .esport-providers-grid,
+  .lottery-providers-grid,
+  .card-game-providers-grid,
+  .cockfight-providers-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+  
+  .provider-card {
+    padding: 14px 10px;
+    min-height: 75px;
+  }
+  
+  .provider-name {
+    font-size: 13px;
+  }
+  
+  .provider-balance {
+    font-size: 15px;
+  }
+  
+  .total-amount-section {
+    padding: 0 12px 16px;
+  }
+  
+  .total-amount-card {
+    padding: 16px;
+  }
+  
+  .back-button {
+    left: 16px;
+    width: 36px;
+    height: 36px;
+  }
+  
+  .back-arrow {
+    font-size: 16px;
+  }
+  
+  .total-amount-info {
+    margin: 0 50px;
+  }
+}
+
+@media (max-width: 360px) {
+  .wallet-header h1 {
+    font-size: 20px;
+  }
+  
+  .slot-providers-grid,
+  .live-casino-providers-grid,
+  .seven-eleven-providers-grid,
+  .fast-game-providers-grid,
+  .fishing-providers-grid,
+  .sports-providers-grid,
+  .esport-providers-grid,
+  .lottery-providers-grid,
+  .card-game-providers-grid,
+  .cockfight-providers-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+  
+  .provider-card {
+    padding: 12px 8px;
+    min-height: 70px;
+  }
+  
+  .provider-name {
+    font-size: 12px;
+  }
+  
+  .provider-balance {
+    font-size: 14px;
+  }
+}
+
+/* Tablet Responsive */
+@media (min-width: 481px) and (max-width: 768px) {
+  .wallet-header h1 {
+    font-size: 26px;
+  }
+  
+  .slot-providers-grid,
+  .live-casino-providers-grid,
+  .seven-eleven-providers-grid,
+  .fast-game-providers-grid,
+  .fishing-providers-grid,
+  .sports-providers-grid,
+  .esport-providers-grid,
+  .lottery-providers-grid,
+  .card-game-providers-grid,
+  .cockfight-providers-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+  
+  .provider-card {
+    padding: 18px 14px;
+    min-height: 85px;
+  }
+  
+  .provider-name {
+    font-size: 15px;
+  }
+  
+  .provider-balance {
+    font-size: 17px;
+  }
+}
+
+/* Desktop Responsive - Secondary */
+@media (min-width: 769px) {
+  .wallet-container {
+    max-width: 480px;
+    margin: 0 auto;
+  }
+  
+  .wallet-header h1 {
+    font-size: 28px;
+  }
+  
+  .slot-providers-grid,
+  .live-casino-providers-grid,
+  .seven-eleven-providers-grid,
+  .fast-game-providers-grid,
+  .fishing-providers-grid,
+  .sports-providers-grid,
+  .esport-providers-grid,
+  .lottery-providers-grid,
+  .card-game-providers-grid,
+  .cockfight-providers-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  
+  .provider-card {
+    padding: 20px 16px;
+    min-height: 90px;
+  }
+  
+  .provider-name {
+    font-size: 16px;
+  }
+  
+  .provider-balance {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .wallet-container {
+    max-width: 600px;
+  }
+  
+  .wallet-header h1 {
+    font-size: 30px;
+  }
+  
+  .slot-providers-grid,
+  .live-casino-providers-grid,
+  .seven-eleven-providers-grid,
+  .fast-game-providers-grid,
+  .fishing-providers-grid,
+  .sports-providers-grid,
+  .esport-providers-grid,
+  .lottery-providers-grid,
+  .card-game-providers-grid,
+  .cockfight-providers-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+}
+
+/* Smooth Scrolling */
+.wallet-container {
+  scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+.wallet-container::-webkit-scrollbar {
+  width: 4px;
+}
+
+.wallet-container::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+}
+
+.wallet-container::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 2px;
+}
+
+.wallet-container::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Hide scrollbar for mobile */
+@media (max-width: 768px) {
+  .wallet-container::-webkit-scrollbar {
+    width: 0;
+  }
+} 
