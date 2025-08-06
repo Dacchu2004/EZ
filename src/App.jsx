@@ -8,6 +8,7 @@ import ActionRow from "./actionRow";
 import HeroSection from "./heroSection";
 import ReferralPage from "./referralpage";
 import WalletScreen from "./walletscreen";
+import WithdrawalPage from "./WithdrawalPage";
 import Footer from "./footer";
 import Navbar from "./components/Navbar";
 import Mydata from "./Mydata";
@@ -41,7 +42,7 @@ function HomePage() {
 function Layout() {
   const location = useLocation();
 
-  const hideNavbarRoutes = ["/", "/wallet"];
+  const hideNavbarRoutes = ["/", "/wallet", "/withdrawal"];
   const showNavbar = !hideNavbarRoutes.includes(location.pathname);
 
   return (
@@ -52,6 +53,7 @@ function Layout() {
         <Route path="/" element={<HomePage />} />
         <Route path="/referral" element={<ReferralPage />} />
         <Route path="/wallet" element={<WalletScreen />} />
+        <Route path="/withdrawal" element={<WithdrawalPage />} />
         <Route path="/Mydata" element={<Mydata />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/security" element={<SecurityCenter />} />

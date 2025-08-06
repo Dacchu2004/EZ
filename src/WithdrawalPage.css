@@ -1,0 +1,600 @@
+/* Withdrawal Page Styles - Mobile First Responsive */
+
+.withdrawal-page {
+  min-height: 100vh;
+  background: #000000;
+  color: white;
+  padding: 0;
+  margin: 0;
+  width: 100vw;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.withdrawal-header {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+.back-button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+  min-width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.page-title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+/* Navigation Tabs */
+.nav-tabs {
+  display: flex;
+  padding: 0 16px 16px;
+  gap: 0;
+  width: 100%;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+.tab {
+  flex: 1;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 12px 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tab.active {
+  color: white;
+}
+
+.tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #ff0000;
+}
+
+/* Withdraw Button */
+.withdraw-section {
+  padding: 0 16px 16px;
+  width: 100%;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+.withdraw-button {
+  width: 100%;
+  background: #ff0000;
+  color: white;
+  border: none;
+  padding: 16px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.withdraw-button:hover {
+  background: #cc0000;
+}
+
+.withdraw-button:active {
+  transform: scale(0.98);
+}
+
+/* Weekly Turnover Section */
+.weekly-turnover-section {
+  background: #2a2a2a;
+  margin: 0 16px 16px;
+  padding: 16px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: calc(100% - 32px);
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+.turnover-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.turnover-label {
+  font-size: 13px;
+  color: #ccc;
+  white-space: nowrap;
+}
+
+.turnover-amount {
+  font-size: 16px;
+  font-weight: 700;
+  color: white;
+}
+
+.turnover-timer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.timer-text {
+  font-size: 13px;
+  color: white;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.refresh-button {
+  background: #ff0000;
+  color: white;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+  flex-shrink: 0;
+}
+
+.refresh-button:hover {
+  background: #cc0000;
+}
+
+/* Transaction Section */
+.transaction-section {
+  background: #2a2a2a;
+  margin: 0 16px;
+  border-radius: 8px;
+  overflow: hidden;
+  width: calc(100% - 32px);
+  box-sizing: border-box;
+}
+
+.transaction-list {
+  padding: 12px 16px;
+}
+
+.transaction-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 8px 0;
+  border-bottom: 1px solid #3a3a3a;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.transaction-item:last-child {
+  border-bottom: none;
+}
+
+.transaction-details {
+  flex: 1;
+  min-width: 0;
+}
+
+.transaction-date {
+  font-size: 11px;
+  color: #ccc;
+  margin-bottom: 2px;
+  white-space: nowrap;
+}
+
+.transaction-description {
+  font-size: 13px;
+  color: white;
+  font-weight: 500;
+  word-break: break-word;
+}
+
+.transaction-status {
+  margin-left: 12px;
+  flex-shrink: 0;
+}
+
+.status-badge {
+  background: #666;
+  color: white;
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.status-badge.pending {
+  background: #ffa500;
+  color: white;
+}
+
+.status-badge.completed {
+  background: #4CAF50;
+  color: white;
+}
+
+.status-badge.failed {
+  background: #f44336;
+  color: white;
+}
+
+/* More Button */
+.more-section {
+  padding: 12px 16px;
+  text-align: center;
+  border-top: 1px solid #3a3a3a;
+}
+
+.more-button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 6px 12px;
+  transition: color 0.3s ease;
+  min-height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.more-button:hover {
+  color: #ff0000;
+}
+
+/* Mobile Responsive - Small screens */
+@media (max-width: 360px) {
+  .withdrawal-header {
+    padding: 12px;
+  }
+  
+  .page-title {
+    font-size: 15px;
+  }
+  
+  .nav-tabs {
+    padding: 0 12px 12px;
+  }
+  
+  .tab {
+    font-size: 13px;
+    padding: 10px 0;
+  }
+  
+  .withdraw-section {
+    padding: 0 12px 12px;
+  }
+  
+  .withdraw-button {
+    padding: 14px;
+    font-size: 15px;
+  }
+  
+  .weekly-turnover-section {
+    margin: 0 12px 12px;
+    padding: 12px;
+    width: calc(100% - 24px);
+  }
+  
+  .turnover-label {
+    font-size: 12px;
+  }
+  
+  .turnover-amount {
+    font-size: 15px;
+  }
+  
+  .timer-text {
+    font-size: 12px;
+  }
+  
+  .transaction-section {
+    margin: 0 12px;
+    width: calc(100% - 24px);
+  }
+  
+  .transaction-list {
+    padding: 12px;
+  }
+  
+  .transaction-item {
+    padding: 10px 0;
+  }
+  
+  .transaction-date {
+    font-size: 10px;
+  }
+  
+  .transaction-description {
+    font-size: 12px;
+  }
+  
+  .status-badge {
+    font-size: 10px;
+    padding: 3px 6px;
+  }
+}
+
+/* Mobile Responsive - Medium screens */
+@media (min-width: 361px) and (max-width: 480px) {
+  .withdrawal-header {
+    padding: 16px;
+  }
+  
+  .page-title {
+    font-size: 16px;
+  }
+  
+  .nav-tabs {
+    padding: 0 16px 16px;
+  }
+  
+  .tab {
+    font-size: 14px;
+    padding: 12px 0;
+  }
+  
+  .withdraw-section {
+    padding: 0 16px 16px;
+  }
+  
+  .withdraw-button {
+    padding: 16px;
+    font-size: 16px;
+  }
+  
+  .weekly-turnover-section {
+    margin: 0 16px 16px;
+    padding: 16px;
+  }
+  
+  .turnover-label {
+    font-size: 13px;
+  }
+  
+  .turnover-amount {
+    font-size: 16px;
+  }
+  
+  .transaction-list {
+    padding: 16px;
+  }
+  
+  .transaction-item {
+    padding: 12px 0;
+  }
+  
+  .transaction-date {
+    font-size: 11px;
+  }
+  
+  .transaction-description {
+    font-size: 13px;
+  }
+  
+  .status-badge {
+    font-size: 11px;
+    padding: 4px 8px;
+  }
+}
+
+/* Tablet Responsive */
+@media (min-width: 481px) and (max-width: 768px) {
+  .withdrawal-page {
+    max-width: 480px;
+    margin: 0 auto;
+  }
+  
+  .withdrawal-header {
+    padding: 20px 24px;
+  }
+  
+  .page-title {
+    font-size: 18px;
+  }
+  
+  .nav-tabs {
+    padding: 0 24px 20px;
+  }
+  
+  .tab {
+    font-size: 16px;
+    padding: 14px 0;
+  }
+  
+  .withdraw-section {
+    padding: 0 24px 20px;
+  }
+  
+  .withdraw-button {
+    padding: 18px;
+    font-size: 18px;
+  }
+  
+  .weekly-turnover-section {
+    margin: 0 24px 20px;
+    padding: 20px;
+  }
+  
+  .turnover-label {
+    font-size: 14px;
+  }
+  
+  .turnover-amount {
+    font-size: 18px;
+  }
+  
+  .timer-text {
+    font-size: 14px;
+  }
+  
+  .transaction-section {
+    margin: 0 24px;
+  }
+  
+  .transaction-list {
+    padding: 20px;
+  }
+  
+  .transaction-item {
+    padding: 14px 0;
+  }
+  
+  .transaction-date {
+    font-size: 12px;
+  }
+  
+  .transaction-description {
+    font-size: 14px;
+  }
+  
+  .status-badge {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+}
+
+/* Desktop Responsive */
+@media (min-width: 769px) {
+  .withdrawal-page {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .withdrawal-header {
+    padding: 24px 32px;
+  }
+  
+  .page-title {
+    font-size: 20px;
+  }
+  
+  .nav-tabs {
+    padding: 0 32px 24px;
+  }
+  
+  .tab {
+    font-size: 18px;
+    padding: 16px 0;
+  }
+  
+  .withdraw-section {
+    padding: 0 32px 24px;
+  }
+  
+  .withdraw-button {
+    padding: 20px;
+    font-size: 20px;
+  }
+  
+  .weekly-turnover-section {
+    margin: 0 32px 24px;
+    padding: 24px;
+  }
+  
+  .turnover-label {
+    font-size: 16px;
+  }
+  
+  .turnover-amount {
+    font-size: 20px;
+  }
+  
+  .timer-text {
+    font-size: 16px;
+  }
+  
+  .refresh-button {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+  }
+  
+  .transaction-section {
+    margin: 0 32px;
+  }
+  
+  .transaction-list {
+    padding: 24px;
+  }
+  
+  .transaction-item {
+    padding: 16px 0;
+  }
+  
+  .transaction-date {
+    font-size: 14px;
+  }
+  
+  .transaction-description {
+    font-size: 16px;
+  }
+  
+  .status-badge {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+  
+  .more-button {
+    font-size: 16px;
+    padding: 12px 20px;
+  }
+} 

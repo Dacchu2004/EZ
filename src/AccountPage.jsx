@@ -15,12 +15,19 @@ import {
   FaWallet,
   FaUniversity,
   FaSignOutAlt,
-  FaRedo
+  FaRedo,
+  FaStar,
+  FaBell,
+  FaHandshake
 } from 'react-icons/fa';
 
 const AccountPage = () => {
   const navigate = useNavigate();
   
+  const handleBackClick = () => {
+    navigate('/');
+  };
+
   const quickActions = [
     { icon: <FaMoneyBillWave />, label: 'Deposit' },
     { icon: <FaHandHoldingUsd />, label: 'Withdrawal' },
@@ -28,15 +35,25 @@ const AccountPage = () => {
     { icon: <FaHistory />, label: 'Bet History' }
   ];
 
-  const menuItems = [
+  const allMenuItems = [
     { icon: <FaUserShield />, label: 'My Profile', action: () => navigate('/profile') },
     { icon: <FaLock />, label: 'Security Center', action: () => navigate('/security') },
     { icon: <FaWallet />, label: 'Wallet', action: () => navigate('/wallet') },
-    { icon: <FaUniversity />, label: 'Bank Account', action: () => navigate('/bank-account') }
+    { icon: <FaUniversity />, label: 'Bank Account', action: () => navigate('/bank-account') },
+    { icon: <FaStar />, label: 'Reward Center', action: () => navigate('/reward-center') },
+    { icon: <FaBell />, label: 'Notifications', action: () => navigate('/notifications'), notificationCount: 1 },
+    { icon: <FaHandshake />, label: 'Affiliate', action: () => navigate('/affiliate') }
   ];
 
   return (
     <div className="account-page">
+      {/* Back Button */}
+      <div className="account-back-header">
+        <button className="back-button" onClick={handleBackClick}>
+          ←
+        </button>
+      </div>
+
       {/* Red Header Section */}
       <div className="account-header">
         <div className="user-info">
@@ -91,9 +108,9 @@ const AccountPage = () => {
         ))}
       </div>
 
-      {/* Menu Items Section */}
+      {/* All Menu Items Section */}
       <div className="menu-section">
-        {menuItems.map((item, index) => (
+        {allMenuItems.map((item, index) => (
           <div 
             key={index} 
             className="menu-item"
@@ -104,6 +121,11 @@ const AccountPage = () => {
               {item.icon}
             </div>
             <span className="menu-label">{item.label}</span>
+            {item.notificationCount && (
+              <div className="notification-badge">
+                {item.notificationCount}
+              </div>
+            )}
           </div>
         ))}
       </div>

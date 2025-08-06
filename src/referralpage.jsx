@@ -1,13 +1,25 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./ReferralPage.css";
 import { MdGroups2 } from "react-icons/md";
 import { FaTimes } from "react-icons/fa";
 
 const ReferralPage = () => {
+  const navigate = useNavigate();
+
+  const handleBackClick = () => {
+    navigate('/');
+  };
+
   return (
     <div className="referral-page">
-      {/* Top Alert Banner */}
-      
+      {/* Back Button */}
+      <div className="referral-header">
+        <button className="back-button" onClick={handleBackClick}>
+          ←
+        </button>
+      </div>
+
       {/* Total Income Section */}
       <div className="income-card">
         <div className="income-top">
@@ -24,32 +36,19 @@ const ReferralPage = () => {
         </div>
       </div>
 
-
-    <div className="paid-out">
-  <p>Income Paid Out</p>
-  <div className="counter-row">
-    <span>$</span>
-    {'40,730,092'.split('').map((char, idx) => (
-      <div
-        className={`counter-box${char === ',' ? ' comma' : ''}`}
-        key={idx}
-      >
-        {char}
-      </div>
-    ))}
-  </div>
-</div>
-
-
-      {/* Invite Friend Section */}
-      <div className="invite-box">
-        <p>Invite a friend to earn</p>
-        <h1>RM 88</h1>
-        <p className="small">The invited friend is required to complete valid deposits</p>
-        <button className="invite-btn">
-          <span className="icon"><MdGroups2 /></span>
-          INVITE NOW
-        </button>
+      <div className="paid-out">
+        <p>Income Paid Out</p>
+        <div className="counter-row">
+          <span>$</span>
+          {'40,730,092'.split('').map((char, idx) => (
+            <div
+              className={`counter-box${char === ',' ? ' comma' : ''}`}
+              key={idx}
+            >
+              {char}
+            </div>
+          ))}
+        </div>
       </div>
 
       {/* Bottom Rewards Section */}
@@ -188,7 +187,7 @@ const ReferralPage = () => {
             <h4>Terms and Conditions:</h4>
             <ol>
               <li>
-                The referee (invited friend) must:
+                The referee (invited friend) must:
                 <ul>
                   <li>Register using the referrer's link QR code.</li>
                   <li>Deposit a <strong>minimum of RM250</strong> within <strong>30 days</strong> from the registration date</li>
@@ -221,8 +220,6 @@ const ReferralPage = () => {
       </div>
     </div>
   );
-    
-
 };
 
 export default ReferralPage;
