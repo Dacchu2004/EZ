@@ -1,6 +1,6 @@
 import "./App.css";
 import "./index.css";
-import { FaHome, FaUserFriends, FaWallet, FaUser } from "react-icons/fa";
+import { FaBars, FaUserFriends, FaWallet, FaUser, FaGift } from "react-icons/fa";
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from "react-router-dom";
 import Carousel from "./components/Carousel";
 import Header from "./header";
@@ -59,13 +59,17 @@ function Layout() {
 
       {/* Bottom Navigation Bar */}
       <nav className="bottom-nav">
-        <Link to="/" className="nav-item">
-          <FaHome />
-          <span>Home</span>
+        <Link to="/menu" className="nav-item">
+          <FaBars />
+          <span>Menu</span>
         </Link>
         <Link to="/referral" className="nav-item">
           <FaUserFriends />
           <span>Referral</span>
+        </Link>
+        <Link to="/reward-center" className="nav-item reward-center">
+          <FaGift />
+          <span>Reward Center</span>
         </Link>
         <Link to="/wallet" className="nav-item">
           <FaWallet />

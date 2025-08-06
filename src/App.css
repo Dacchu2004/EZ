@@ -12,6 +12,33 @@
   z-index: 1000;
 }
 
+.nav-item.reward-center {
+  background: linear-gradient(135deg, #ff4444, #cc1100);
+  color: #fff;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 10px;
+  box-shadow: 0 2px 8px rgba(255, 68, 68, 0.3);
+  border: 2px solid #fff;
+}
+
+.nav-item.reward-center svg {
+  color: #fff;
+  margin-bottom: 2px;
+  font-size: 18px;
+}
+
+.nav-item.reward-center span {
+  font-size: 9px;
+  color: #fff;
+  font-weight: 600;
+}
+
 .nav-item {
   text-align: center;
   font-size: 14px;

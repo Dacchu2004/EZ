@@ -333,6 +333,6 @@ export default function WalletScreen() {
 
       {/* Bottom Spacing for Scroll */}
       <div className="bottom-spacing"></div>
-    </div>
+      </div>
   );
 }

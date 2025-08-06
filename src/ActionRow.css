@@ -12,7 +12,8 @@
   align-items: center;
   box-sizing: border-box;
   background-color: #000;
-  padding: 16px;
+  padding: 20px 16px;
+  gap: 8px;
 }
 
 .action-item {
@@ -22,21 +23,33 @@
   align-items: center;
   text-align: center;
   color: white;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.action-item:hover {
+  transform: translateY(-2px);
 }
 
 .icon-circle {
- background-color: #312d2d;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    display: flex
-;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 8px;
+  background-color: #2a2a2a !important;
+  border-radius: 50% !important;
+  width: 45px !important;
+  height: 45px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin-bottom: 6px !important;
+  border: none !important;
 }
 
 .action-icon {
-  color: red;      /* red icon */
-      font-size: 25px; /* increase size as needed */
+  color: #e32526 !important;
+  font-size: 18px !important;
+}
+
+.action-item span {
+  font-size: 12px;
+  font-weight: 500;
+  color: #fff;
 }
