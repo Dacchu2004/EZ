@@ -4,14 +4,9 @@ import './WithdrawalPage.css';
 
 const WithdrawalPage = () => {
   const navigate = useNavigate();
-  const [activeTab, setActiveTab] = useState('withdrawal');
 
   const handleBackClick = () => {
     navigate(-1);
-  };
-
-  const handleTabChange = (tab) => {
-    setActiveTab(tab);
   };
 
   const handleWithdrawClick = () => {
@@ -42,14 +37,13 @@ const WithdrawalPage = () => {
       {/* Navigation Tabs */}
       <div className="nav-tabs">
         <button 
-          className={`tab ${activeTab === 'deposit' ? 'active' : ''}`}
-          onClick={() => handleTabChange('deposit')}
+          className="tab"
+          onClick={() => navigate('/deposit')}
         >
           Deposit
         </button>
         <button 
-          className={`tab ${activeTab === 'withdrawal' ? 'active' : ''}`}
-          onClick={() => handleTabChange('withdrawal')}
+          className="tab active"
         >
           Withdrawal
         </button>

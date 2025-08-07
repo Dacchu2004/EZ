@@ -18,6 +18,8 @@ import SecurityCenter from "./SecurityCenter";
 import SignupPage from "./SignupPage";
 import LoginPage from "./LoginPage";
 import BankAccountPage from "./BankAccountPage";
+import DepositPage from "./DepositPage";
+import NotificationPage from "./NotificationPage";
 
 // Carousel Images
 const carouselImages = [
@@ -42,7 +44,7 @@ function HomePage() {
 function Layout() {
   const location = useLocation();
 
-  const hideNavbarRoutes = ["/", "/wallet", "/withdrawal"];
+  const hideNavbarRoutes = ["/", "/wallet", "/withdrawal", "/deposit", "/notifications"];
   const showNavbar = !hideNavbarRoutes.includes(location.pathname);
 
   return (
@@ -57,6 +59,8 @@ function Layout() {
         <Route path="/Mydata" element={<Mydata />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/security" element={<SecurityCenter />} />
+        <Route path="/deposit" element={<DepositPage />} />
+        <Route path="/notifications" element={<NotificationPage />} />
       </Routes>
 
       {/* Bottom Navigation Bar */}
