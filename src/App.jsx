@@ -2,6 +2,7 @@ import "./App.css";
 import "./index.css";
 import { FaBars, FaUserFriends, FaWallet, FaUser, FaGift } from "react-icons/fa";
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from "react-router-dom";
+import { useState } from "react";
 import Carousel from "./components/Carousel";
 import Header from "./header";
 import ActionRow from "./actionRow";
@@ -11,6 +12,7 @@ import WalletScreen from "./walletscreen";
 import WithdrawalPage from "./WithdrawalPage";
 import Footer from "./footer";
 import Navbar from "./components/Navbar";
+import Sidebar from "./components/Sidebar";
 import Mydata from "./Mydata";
 import AccountPage from "./AccountPage";
 import Profile from "./Profile";
@@ -43,9 +45,19 @@ function HomePage() {
 
 function Layout() {
   const location = useLocation();
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const hideNavbarRoutes = ["/", "/wallet", "/withdrawal", "/deposit", "/notifications"];
   const showNavbar = !hideNavbarRoutes.includes(location.pathname);
+
+  const handleMenuClick = (e) => {
+    e.preventDefault();
+    setIsSidebarOpen(true);
+  };
+
+  const handleCloseSidebar = () => {
+    setIsSidebarOpen(false);
+  };
 
   return (
     <>
@@ -63,12 +75,15 @@ function Layout() {
         <Route path="/notifications" element={<NotificationPage />} />
       </Routes>
 
+      {/* Sidebar */}
+      <Sidebar isOpen={isSidebarOpen} onClose={handleCloseSidebar} />
+
       {/* Bottom Navigation Bar */}
       <nav className="bottom-nav">
-        <Link to="/menu" className="nav-item">
+        <button onClick={handleMenuClick} className="nav-item menu-button">
           <FaBars />
           <span>Menu</span>
-        </Link>
+        </button>
         <Link to="/referral" className="nav-item">
           <FaUserFriends />
           <span>Referral</span>
