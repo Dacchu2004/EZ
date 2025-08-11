@@ -1,5 +1,5 @@
 
-import "./HeroSection.css";
+import "./heroSection.css";
 import MenuBar from "./menuBar";
 
 
