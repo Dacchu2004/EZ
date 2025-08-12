@@ -23,6 +23,7 @@ import ForgotPasswordPage from "./ForgotPasswordPage";
 import BankAccountPage from "./BankAccountPage";
 import DepositPage from "./DepositPage";
 import NotificationPage from "./NotificationPage";
+import RewardCenterPage from "./RewardCenterPage";
 
 // Carousel Images
 const carouselImages = [
@@ -48,7 +49,7 @@ function Layout() {
   const location = useLocation();
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
-  const hideNavbarRoutes = ["/", "/wallet", "/withdrawal", "/deposit", "/notifications"];
+  const hideNavbarRoutes = ["/", "/wallet", "/withdrawal", "/deposit", "/notifications", "/reward-center"];
   const showNavbar = !hideNavbarRoutes.includes(location.pathname);
 
   const handleMenuClick = (e) => {
@@ -74,6 +75,7 @@ function Layout() {
         <Route path="/security" element={<SecurityCenter />} />
         <Route path="/deposit" element={<DepositPage />} />
         <Route path="/notifications" element={<NotificationPage />} />
+        <Route path="/reward-center" element={<RewardCenterPage />} />
       </Routes>
 
       {/* Sidebar */}
@@ -115,6 +117,7 @@ function App() {
         <Route path="/forgot-password" element={<ForgotPasswordPage />} />
         <Route path="/account" element={<AccountPage />} />
         <Route path="/bank-account" element={<BankAccountPage />} />
+        <Route path="/reward-center" element={<RewardCenterPage />} />
         <Route path="/*" element={<Layout />} />
       </Routes>
     </Router>
