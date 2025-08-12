@@ -93,7 +93,7 @@ const LoginPage = () => {
 
       {/* Forgot Password */}
       <div className="login-forgot-row">
-        <span className="login-forgot-link">Forgot your password?</span>
+        <span className="login-forgot-link" onClick={() => navigate('/forgot-password')}>Forgot your password?</span>
       </div>
 
       {/* Customer Service */}

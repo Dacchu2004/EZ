@@ -19,6 +19,7 @@ import Profile from "./Profile";
 import SecurityCenter from "./SecurityCenter";
 import SignupPage from "./SignupPage";
 import LoginPage from "./LoginPage";
+import ForgotPasswordPage from "./ForgotPasswordPage";
 import BankAccountPage from "./BankAccountPage";
 import DepositPage from "./DepositPage";
 import NotificationPage from "./NotificationPage";
@@ -111,6 +112,7 @@ function App() {
       <Routes>
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/forgot-password" element={<ForgotPasswordPage />} />
         <Route path="/account" element={<AccountPage />} />
         <Route path="/bank-account" element={<BankAccountPage />} />
         <Route path="/*" element={<Layout />} />
