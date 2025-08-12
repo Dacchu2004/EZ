@@ -1,70 +1,73 @@
 import React from 'react';
-import { FaArrowLeft, FaShare, FaCalendarCheck, FaGift, FaCoins, FaBullseye, FaSpinner, FaEnvelope, FaCrown, FaUserFriends } from 'react-icons/fa';
+import { FaArrowLeft, FaShare, FaStar, FaInfinity } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 import './RewardCenterPage.css';
 
 const RewardCenterPage = () => {
-  const rewardItems = [
+  const navigate = useNavigate();
+
+  const rewardCategories = [
     {
       id: 1,
-      icon: <FaCalendarCheck className="reward-icon" />,
-      text: "Sign-In Task",
+      name: "Sign-In Task",
+      icon: "📅",
       buttonText: "Claim",
       buttonType: "claim",
-      hasNotification: true
+      hasStar: true
     },
     {
       id: 2,
-      icon: <FaGift className="reward-icon" />,
-      text: "Bonus",
+      name: "Bonus",
+      icon: "🎁",
       buttonText: "View",
       buttonType: "view"
     },
     {
       id: 3,
-      icon: <FaCoins className="reward-icon" />,
-      text: "Rebate",
+      name: "Rebate",
+      icon: "🪙",
       buttonText: "View",
       buttonType: "view"
     },
     {
       id: 4,
-      icon: <FaBullseye className="reward-icon" />,
-      text: "Mission Diary",
+      name: "Mission Diary",
+      icon: "🎯",
       buttonText: "View",
       buttonType: "view"
     },
     {
       id: 5,
-      icon: <FaSpinner className="reward-icon" />,
-      text: "Lucky Spin",
+      name: "Lucky Spin",
+      icon: "🎰",
       buttonText: "View",
       buttonType: "view"
     },
     {
       id: 6,
-      icon: <FaEnvelope className="reward-icon" />,
-      text: "Angpow",
+      name: "Angpow",
+      icon: "🧧",
       buttonText: "View",
       buttonType: "view"
     },
     {
       id: 7,
-      icon: <FaCrown className="reward-icon" />,
-      text: "VIP",
+      name: "VIP",
+      icon: "🏆",
       buttonText: "View",
       buttonType: "view"
     },
     {
       id: 8,
-      icon: <FaUserFriends className="reward-icon" />,
-      text: "Invite Friends",
+      name: "Invite Friends",
+      icon: "💰",
       buttonText: "View",
       buttonType: "view"
     }
   ];
 
   const handleBack = () => {
-    window.history.back();
+    navigate(-1);
   };
 
   const handleShare = () => {
@@ -72,47 +75,62 @@ const RewardCenterPage = () => {
     console.log('Share clicked');
   };
 
+  const handleCategoryClick = (category) => {
+    if (category.buttonType === 'claim') {
+      console.log('Claiming reward for:', category.name);
+    } else {
+      console.log('Viewing:', category.name);
+    }
+  };
+
   return (
     <div className="reward-center-page">
-      {/* Header */}
+      {/* Reward Center Header */}
       <div className="reward-header">
         <button className="back-button" onClick={handleBack}>
           <FaArrowLeft />
         </button>
-        <h1 className="reward-title">REWARD CENTER</h1>
+        <h1 className="page-title">REWARD CENTER</h1>
         <button className="share-button" onClick={handleShare}>
-          <div className="share-icon-container">
-            <div className="coin-icon">💰</div>
-            <div className="people-icon">👥</div>
-          </div>
-          <span>Share</span>
+          <FaShare />
+          <span className="share-text">Share</span>
+          <span className="coin-icon">🪙</span>
         </button>
       </div>
 
-      {/* Main Content */}
+      {/* Main Content Area */}
       <div className="reward-content">
-        {rewardItems.map((item) => (
-          <div key={item.id} className="reward-item">
-            <div className="reward-item-left">
-              <div className="reward-icon-container">
-                {item.icon}
+        <div className="reward-categories">
+          {rewardCategories.map((category) => (
+            <div key={category.id} className="reward-category-card">
+              <div className="category-icon">
+                {category.icon}
               </div>
-              <span className="reward-text">{item.text}</span>
+              <div className="category-name">
+                {category.name}
+              </div>
+              <div className="category-button-container">
+                <button
+                  className={`category-button ${category.buttonType}`}
+                  onClick={() => handleCategoryClick(category)}
+                >
+                  {category.buttonText}
+                </button>
+                {category.hasStar && (
+                  <div className="star-overlay">
+                    <FaStar />
+                  </div>
+                )}
+              </div>
             </div>
-            <button 
-              className={`reward-button ${item.buttonType}`}
-              onClick={() => console.log(`${item.text} clicked`)}
-            >
-              {item.buttonText}
-              {item.hasNotification && (
-                <div className="notification-dot">⭐</div>
-              )}
-            </button>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
 
-
+      {/* Floating Action Button */}
+      <div className="fab">
+        <FaInfinity />
+      </div>
     </div>
   );
 };

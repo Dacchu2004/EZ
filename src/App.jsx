@@ -117,7 +117,6 @@ function App() {
         <Route path="/forgot-password" element={<ForgotPasswordPage />} />
         <Route path="/account" element={<AccountPage />} />
         <Route path="/bank-account" element={<BankAccountPage />} />
-        <Route path="/reward-center" element={<RewardCenterPage />} />
         <Route path="/*" element={<Layout />} />
       </Routes>
     </Router>
