@@ -76,6 +76,14 @@ const RewardCenterPage = () => {
   };
 
   const handleCategoryClick = (category) => {
+    if (category.name === 'Rebate') {
+      navigate('/rebate');
+      return;
+    }
+    if (category.name === 'Mission Diary') {
+      navigate('/mission-diary');
+      return;
+    }
     if (category.buttonType === 'claim') {
       console.log('Claiming reward for:', category.name);
     } else {

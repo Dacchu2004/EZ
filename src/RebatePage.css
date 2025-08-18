@@ -1,0 +1,178 @@
+/* Container */
+.rebate-page {
+  background-color: #000;
+  color: #fff;
+  min-height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+/* Header */
+.rebate-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 56px;
+  padding-top: env(safe-area-inset-top);
+  background-color: #1a1a1a;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.icon-button {
+  position: absolute;
+  left: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 18px;
+  color: #fff !important;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  font-size: 20px;
+  z-index: 2;
+}
+
+.icon-button .back-glyph {
+  display: block;
+  font-size: 22px;
+  line-height: 1;
+  color: #ffffff;
+  transform: translateX(-1px);
+}
+
+.icon-button:active { transform: scale(0.96); background: rgba(255,255,255,0.16); }
+
+.rebate-title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.share-pill {
+  position: absolute;
+  right: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.06);
+  color: #fff;
+  border: none;
+  z-index: 2;
+}
+
+.share-text { font-size: 12px; }
+.share-coin { font-size: 14px; }
+
+/* Content */
+.rebate-content {
+  padding: 14px;
+  padding-bottom: 120px; /* for bottom space */
+}
+
+.rebate-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+/* Card */
+.rebate-card {
+  background: #101010;
+  border: 1px solid #2a2a2a;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.6);
+}
+
+.rebate-card-inner { padding: 18px 16px 16px; }
+
+.rebate-period {
+  color: #e6e6e6;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.rebate-image-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 120px;
+}
+
+.rebate-image {
+  width: 96px;
+  height: 96px;
+  object-fit: contain;
+}
+
+.rebate-amount {
+  margin-top: 6px;
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.rebate-cta {
+  margin-top: 14px;
+  width: 100%;
+  background: #e0322b;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-weight: 700;
+}
+
+/* Floating bottom logo button */
+.floating-logo {
+  position: fixed;
+  right: 16px;
+  bottom: 24px;
+  width: 72px;
+  height: 72px;
+  border-radius: 36px;
+  background: #c00;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.5);
+}
+
+.floating-logo img {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+}
+
+/* Small phones */
+@media (max-width: 360px) {
+  .icon-button { left: 8px; width: 34px; height: 34px; }
+  .rebate-grid { grid-template-columns: 1fr; }
+  .rebate-title { font-size: 18px; }
+  .rebate-period { font-size: 16px; }
+  .rebate-amount { font-size: 24px; }
+  .rebate-image { width: 84px; height: 84px; }
+}
+
+/* Tablets in portrait - keep single column, bigger spacing */
+@media (min-width: 600px) and (max-width: 1024px) {
+  .rebate-grid { gap: 20px; }
+  .rebate-card-inner { padding: 20px; }
+}
+
+/* Large screens - 2 columns but maintain phone look as secondary */
+@media (min-width: 900px) {
+  .rebate-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
