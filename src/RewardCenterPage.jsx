@@ -84,6 +84,10 @@ const RewardCenterPage = () => {
       navigate('/mission-diary');
       return;
     }
+    if (category.name === 'VIP') {
+      navigate('/vip');
+      return;
+    }
     if (category.buttonType === 'claim') {
       console.log('Claiming reward for:', category.name);
     } else {

@@ -26,6 +26,7 @@ import NotificationPage from "./NotificationPage";
 import RewardCenterPage from "./RewardCenterPage";
 import RebatePage from "./RebatePage";
 import MissionDiaryPage from "./MissionDiaryPage";
+import VIPPage from "./VIPPage";
 
 // Carousel Images
 const carouselImages = [
@@ -51,7 +52,7 @@ function Layout() {
   const location = useLocation();
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
-  const hideNavbarRoutes = ["/", "/wallet", "/withdrawal", "/deposit", "/notifications", "/reward-center", "/rebate", "/mission-diary"];
+  const hideNavbarRoutes = ["/", "/wallet", "/withdrawal", "/deposit", "/notifications", "/reward-center", "/rebate", "/mission-diary", "/vip"];
   const showNavbar = !hideNavbarRoutes.includes(location.pathname);
 
   const handleMenuClick = (e) => {
@@ -80,6 +81,7 @@ function Layout() {
         <Route path="/reward-center" element={<RewardCenterPage />} />
         <Route path="/rebate" element={<RebatePage />} />
         <Route path="/mission-diary" element={<MissionDiaryPage />} />
+        <Route path="/vip" element={<VIPPage />} />
       </Routes>
 
       {/* Sidebar */}

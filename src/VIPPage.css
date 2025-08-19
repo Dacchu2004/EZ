@@ -1,0 +1,59 @@
+/* Container */
+.vip-page { background: #000; color: #fff; min-height: 100vh; width: 100vw; overflow-x: hidden; }
+
+/* Header */
+.vip-header { position: sticky; top: 0; z-index: 40; height: 52px; display: flex; align-items: center; justify-content: center; background: #1f1f1f; border-bottom: 1px solid #2b2b2b; }
+.vip-back { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); width: 32px; height: 32px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.08); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 18px; }
+.vip-title { margin: 0; font-weight: 700; font-size: 18px; letter-spacing: 1px; }
+.vip-link { position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: transparent; border: none; color: #fff; font-weight: 600; }
+
+/* Tier section */
+.vip-tier { position: relative; padding: 16px 16px 6px; display: flex; align-items: center; justify-content: center; }
+.vip-carousel-nav { position: absolute; width: 28px; height: 28px; border-radius: 14px; background: #2a2a2a; color: #fff; display: flex; align-items: center; justify-content: center; top: 50%; transform: translateY(-50%); opacity: 0.9; }
+.vip-carousel-nav.left { left: 8px; }
+.vip-carousel-nav.right { right: 8px; }
+.vip-tier-card { width: 90%; max-width: 420px; aspect-ratio: 16/6.5; border-radius: 12px; background: linear-gradient(135deg, #d28a4f, #b76a3c); position: relative; box-shadow: 0 8px 24px rgba(0,0,0,0.4); overflow: hidden; }
+.vip-tier-top { position: absolute; left: 14px; top: 12px; right: 14px; display: flex; align-items: center; justify-content: space-between; }
+.vip-tier-name { font-weight: 700; font-size: 18px; }
+.vip-intro { background: #ffd7b0; color: #3b2a1a; border: none; border-radius: 8px; padding: 6px 10px; font-size: 12px; font-weight: 700; }
+.vip-tier-emblem { position: absolute; right: 16px; bottom: 10px; width: 72px; height: 72px; border-radius: 50%; background: rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center; }
+.vip-tier-emblem img { width: 56px; height: 56px; object-fit: contain; }
+
+/* Conditions */
+.vip-conditions { margin: 12px 16px; background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 10px; padding: 12px; }
+.vip-conditions-head { display: flex; align-items: center; justify-content: space-between; }
+.vip-chip { border: 1px solid #a93632; color: #ff5a54; padding: 6px 10px; border-radius: 16px; font-weight: 700; background: rgba(169,54,50,0.1); }
+.vip-cond-row { margin-top: 12px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.vip-cond-left { min-width: 0; }
+.vip-cond-label { color: #e0e0e0; font-weight: 700; }
+.vip-cond-values { color: #cfcfcf; margin-top: 2px; }
+.vip-cond-values .red { color: #ff4a4a; }
+.vip-cond-values .green { color: #39d353; }
+.vip-cta { background: #e24037; color: #fff; border: none; border-radius: 8px; padding: 8px 12px; font-weight: 800; font-size: 13px; }
+.vip-progress { margin-top: 10px; background: #0f0f0f; border-radius: 10px; padding: 10px 10px; }
+.vip-progress-bar { width: 100%; height: 10px; background: #bdbdbd; border-radius: 8px; }
+.vip-progress-cap { margin-top: 6px; text-align: right; color: #d7d7d7; font-weight: 600; }
+
+/* Privilege grid */
+.vip-priv-section { padding: 12px 16px 120px; }
+.vip-priv-title-section { margin: 4px 0 10px; font-size: 16px; }
+.vip-priv-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.vip-priv-card { background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 12px; padding: 16px; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 12px; }
+.vip-priv-icon { font-size: 40px; }
+.vip-priv-title { font-weight: 700; text-align: center; }
+.vip-priv-badge { margin-top: 6px; background: #9b2523; color: #fff; border-radius: 8px; padding: 8px 12px; font-weight: 700; font-size: 12px; }
+.vip-priv-badge.contact { background: #e24037; }
+
+/* Floating action */
+.vip-fab { position: fixed; right: 16px; bottom: 24px; width: 64px; height: 64px; border-radius: 32px; background: #cf2326; display: flex; align-items: center; justify-content: center; border: none; box-shadow: 0 10px 24px rgba(0,0,0,0.5); }
+.vip-fab img { width: 44px; height: 44px; object-fit: contain; }
+
+/* Small phones */
+@media (max-width: 360px) {
+  .vip-title { font-size: 17px; }
+  .vip-priv-grid { gap: 12px; }
+  .vip-priv-card { padding: 14px; }
+  .vip-priv-icon { font-size: 36px; }
+}
+
+
