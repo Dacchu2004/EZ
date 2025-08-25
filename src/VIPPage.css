@@ -8,17 +8,49 @@
 .vip-link { position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: transparent; border: none; color: #fff; font-weight: 600; cursor: pointer; }
 
 /* Tier section */
-.vip-tier { position: relative; padding: 16px 16px 6px; display: flex; align-items: center; justify-content: center; height: 200px; }
+.vip-tier { 
+  position: relative; 
+  padding: 15px 10px; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  height: 200px; 
+  margin-bottom: 20px;
+}
 .vip-carousel-nav { position: absolute; width: 28px; height: 28px; border-radius: 14px; background: #2a2a2a; color: #fff; display: flex; align-items: center; justify-content: center; top: 50%; transform: translateY(-50%); opacity: 0.9; border: none; cursor: pointer; transition: all 0.2s ease; z-index: 10; }
 .vip-carousel-nav:hover { background: #3a3a3a; opacity: 1; transform: translateY(-50%) scale(1.1); }
 .vip-carousel-nav.left { left: 8px; }
 .vip-carousel-nav.right { right: 8px; }
 
 /* Card stack container */
-.vip-card-stack { position: relative; width: 90%; max-width: 420px; height: 100%; display: flex; align-items: center; justify-content: center; perspective: 1000px; }
+.vip-card-stack { 
+  position: relative; 
+  width: 95%; 
+  max-width: 320px; 
+  height: 160px; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  perspective: 1000px; 
+  margin: 0 auto;
+}
 
 /* Base card styles */
-.vip-tier-card { width: 100%; max-width: 420px; aspect-ratio: 16/6.5; border-radius: 12px; position: absolute; box-shadow: 0 8px 24px rgba(0,0,0,0.4); overflow: hidden; transition: transform 400ms ease, opacity 400ms ease, z-index 400ms ease; transform-style: preserve-3d; }
+.vip-tier-card { 
+  width: 100%; 
+  max-width: 320px; 
+  height: 150px;
+  border-radius: 16px; 
+  position: absolute; 
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2); 
+  overflow: hidden; 
+  transition: all 0.4s ease; 
+  transform-style: preserve-3d;
+  background: linear-gradient(135deg, #ffb347, #ffcc33);
+  padding: 16px;
+  box-sizing: border-box;
+  border: 1px solid rgba(255,255,255,0.1);
+}
 
 /* Main card */
 .vip-tier-card.main-card { z-index: 6; transform: translate3d(0, 0, 0) rotateZ(0deg) scale(1); opacity: 1; }
@@ -26,28 +58,148 @@
 /* Stacked cards - new position classes derived from relative index [-3..3] */
 .vip-tier-card.stacked-card { opacity: 0.95; }
 .vip-tier-card.is-hidden { opacity: 0; pointer-events: none; transform: translate3d(0,0,-500px) scale(0.9); }
-.vip-tier-card.pos-0 { z-index: 6; transform: translate3d(0, 0, 0) rotateZ(0deg) scale(1); }
-.vip-tier-card.pos-n1 { z-index: 5; transform: translate3d(-7.25%, 0, -100px) rotateZ(-2deg) scale(1); }
-.vip-tier-card.pos-p1 { z-index: 5; transform: translate3d(7.25%, 0, -100px) rotateZ(2deg) scale(1); }
-.vip-tier-card.pos-n2 { z-index: 4; opacity: 0.9; transform: translate3d(-13%, 0, -200px) rotateZ(-4deg) scale(1); }
-.vip-tier-card.pos-p2 { z-index: 4; opacity: 0.9; transform: translate3d(13%, 0, -200px) rotateZ(4deg) scale(1); }
-.vip-tier-card.pos-n3 { z-index: 3; opacity: 0.85; transform: translate3d(-17.25%, 0, -300px) rotateZ(-6deg) scale(1); }
-.vip-tier-card.pos-p3 { z-index: 3; opacity: 0.85; transform: translate3d(17.25%, 0, -300px) rotateZ(6deg) scale(1); }
+.vip-tier-card.pos-0 { z-index: 6; transform: translate3d(0, 0, 0) rotateZ(0deg) scale(1); opacity: 1 !important; }
+.vip-tier-card.pos-n1 { z-index: 5; transform: translate3d(-10%, 0, -50px) rotateZ(-2deg) scale(0.9); opacity: 0.8; }
+.vip-tier-card.pos-p1 { z-index: 5; transform: translate3d(10%, 0, -50px) rotateZ(2deg) scale(0.9); opacity: 0.8; }
+.vip-tier-card.pos-n2 { z-index: 4; transform: translate3d(-18%, 0, -100px) rotateZ(-4deg) scale(0.8); opacity: 0.6; }
+.vip-tier-card.pos-p2 { z-index: 4; transform: translate3d(18%, 0, -100px) rotateZ(4deg) scale(0.8); opacity: 0.6; }
+.vip-tier-card.pos-n3 { z-index: 3; transform: translate3d(-25%, 0, -150px) rotateZ(-6deg) scale(0.7); opacity: 0.4; }
+.vip-tier-card.pos-p3 { z-index: 3; transform: translate3d(25%, 0, -150px) rotateZ(6deg) scale(0.7); opacity: 0.4; }
 
 /* Card content */
-.vip-tier-top { position: absolute; left: 14px; top: 12px; right: 14px; display: flex; align-items: center; justify-content: space-between; }
-.vip-tier-name { font-weight: 700; font-size: 18px; }
-.vip-intro { background: #ffd7b0; color: #3b2a1a; border: none; border-radius: 8px; padding: 6px 10px; font-size: 12px; font-weight: 700; cursor: pointer; }
-.vip-content { position: absolute; left: 16px; top: 46px; color: #fff; }
-.text-shadow { text-shadow: 0 2px 6px rgba(0,0,0,0.5); }
-.vip-content-title { font-weight: 800; font-size: 22px; }
-.vip-content-sub { font-weight: 700; margin-top: 4px; font-size: 16px; }
-.vip-content-stat { font-weight: 800; margin-top: 14px; font-size: 16px; }
-.vip-tier-emblem { position: absolute; right: 24px; bottom: 16px; width: 110px; height: 110px; border-radius: 55px; background: rgba(255,255,255,0.18); display: flex; align-items: center; justify-content: center; }
-.vip-tier-emblem img { width: 86px; height: 86px; object-fit: contain; filter: drop-shadow(0 6px 12px rgba(0,0,0,0.35)); }
+.vip-tier-top { 
+  position: absolute; 
+  left: 16px; 
+  top: 16px; 
+  right: 16px; 
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between; 
+  z-index: 2;
+}
 
-/* subtle diagonal overlay similar to screenshot */
-.vip-tier-card::after { content: ""; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(255,255,255,0.0) 40%, rgba(255,255,255,0.08) 50%, rgba(0,0,0,0.12) 60%); pointer-events: none; }
+.vip-tier-name { 
+  font-weight: 700; 
+  font-size: 14px; 
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+  letter-spacing: 0.5px;
+  position: relative;
+  padding-left: 20px;
+}
+
+.vip-tier-name::before {
+  content: '★';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #ffd700;
+  font-size: 12px;
+}
+
+.vip-intro { 
+  background: #fff9e6; 
+  color: #8c6d3e; 
+  border: none; 
+  border-radius: 12px; 
+  padding: 3px 10px 3px 30px; 
+  font-size: 10px; 
+  font-weight: 700; 
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  z-index: 2;
+  position: relative;
+  height: 24px;
+  display: flex;
+  align-items: center;
+}
+
+.vip-intro::before {
+  content: '🎁';
+  position: absolute;
+  left: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+}
+
+.vip-content { 
+  position: absolute; 
+  left: 16px; 
+  top: 40px; 
+  color: #fff; 
+  z-index: 2;
+  width: 60%;
+}
+
+.text-shadow { 
+  text-shadow: 0 1px 3px rgba(0,0,0,0.7); 
+}
+
+.vip-content-title {
+  font-weight: 800; 
+  font-size: 32px;
+  margin: 0;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 10px;
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  position: relative;
+  z-index: 2;
+}
+
+.vip-content-stat { 
+  font-weight: 500; 
+  margin-top: 6px; 
+  font-size: 10px;
+  opacity: 0.9;
+  color: rgba(255,255,255,0.95);
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.vip-tier-emblem { 
+  position: absolute; 
+  right: 12px; 
+  bottom: 12px; 
+  width: 80px; 
+  height: 80px; 
+  border-radius: 50%; 
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.3), rgba(255,255,255,0.1));
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  box-shadow: inset 0 0 15px rgba(255,255,255,0.2),
+              0 4px 15px rgba(0,0,0,0.2);
+  z-index: 2;
+}
+
+.vip-tier-emblem img { 
+  width: 80px; 
+  height: 80px; 
+  object-fit: contain; 
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+}
+
+/* Diagonal overlay */
+.vip-tier-card::after { 
+  content: ""; 
+  position: absolute; 
+  inset: 0; 
+  background: linear-gradient(135deg, 
+    rgba(255,255,255,0.1) 0%,
+    rgba(255,255,255,0.0) 40%, 
+    rgba(255,255,255,0.15) 50%, 
+    rgba(0,0,0,0.1) 60%); 
+  pointer-events: none; 
+  z-index: 1;
+}
 
 /* Conditions */
 .vip-conditions { margin: 12px 16px; background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 10px; padding: 12px; }

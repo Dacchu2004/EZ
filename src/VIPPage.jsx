@@ -94,9 +94,11 @@ const VIPPage = () => {
                 </div>
                 <div className="vip-content">
                   <div className="vip-content-title text-shadow">{level.name}</div>
-                  <div className="vip-content-sub text-shadow">{level.name}</div>
                   <div className="vip-content-stat text-shadow">Points >= {formatNumber(level.vipPointsRequired)}</div>
                   <div className="vip-content-stat text-shadow">Deposit >= {formatNumber(level.depositRequired)}</div>
+                </div>
+                <div className="vip-tier-emblem">
+                  <img src={level.logo} alt={level.name} />
                 </div>
                 <div className="vip-tier-emblem">
                   <img src={level.logo} alt={`${level.name} VIP Emblem`} />
