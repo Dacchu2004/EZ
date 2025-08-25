@@ -58,93 +58,53 @@ const VIPPage = () => {
 
       <section className="vip-tier">
         <button className="vip-carousel-nav left" onClick={handlePrevLevel}>‹</button>
-        
-        {/* Stacked background cards */}
         <div className="vip-card-stack">
-          {/* Previous card (left-3) */}
-          <div 
-            className="vip-tier-card stacked-card left-3" 
-            style={{ 
-              background: vipLevels[currentLevel <= 2 ? vipLevels.length - (3 - currentLevel) : currentLevel - 3].color,
-            }}
-          >
-            <div className="vip-tier-top">
-              <div className="vip-tier-name">{vipLevels[currentLevel <= 2 ? vipLevels.length - (3 - currentLevel) : currentLevel - 3].name}</div>
-            </div>
-          </div>
-          
-          {/* Previous card (left-2) */}
-          <div 
-            className="vip-tier-card stacked-card left-2" 
-            style={{ 
-              background: vipLevels[currentLevel <= 1 ? vipLevels.length - (2 - currentLevel) : currentLevel - 2].color,
-            }}
-          >
-            <div className="vip-tier-top">
-              <div className="vip-tier-name">{vipLevels[currentLevel <= 1 ? vipLevels.length - (2 - currentLevel) : currentLevel - 2].name}</div>
-            </div>
-          </div>
-          
-          {/* Previous card (left) */}
-          <div 
-            className="vip-tier-card stacked-card left" 
-            style={{ 
-              background: vipLevels[currentLevel === 0 ? vipLevels.length - 1 : currentLevel - 1].color,
-            }}
-          >
-            <div className="vip-tier-top">
-              <div className="vip-tier-name">{vipLevels[currentLevel === 0 ? vipLevels.length - 1 : currentLevel - 1].name}</div>
-            </div>
-          </div>
-          
-          {/* Main card */}
-          <div className="vip-tier-card main-card" style={{ background: currentLevelData.color }}>
-            <div className="vip-tier-top">
-              <div className="vip-tier-name">{currentLevelData.name}</div>
-              <button className="vip-intro">VIP Introduction ›</button>
-            </div>
-            <div className="vip-tier-emblem">
-              <img src={currentLevelData.logo} alt={`${currentLevelData.name} VIP Emblem`} />
-            </div>
-          </div>
-          
-          {/* Next card (right) */}
-          <div 
-            className="vip-tier-card stacked-card right" 
-            style={{ 
-              background: vipLevels[currentLevel === vipLevels.length - 1 ? 0 : currentLevel + 1].color,
-            }}
-          >
-            <div className="vip-tier-top">
-              <div className="vip-tier-name">{vipLevels[currentLevel === vipLevels.length - 1 ? 0 : currentLevel + 1].name}</div>
-            </div>
-          </div>
-          
-          {/* Next card (right-2) */}
-          <div 
-            className="vip-tier-card stacked-card right-2" 
-            style={{ 
-              background: vipLevels[currentLevel >= vipLevels.length - 2 ? currentLevel - (vipLevels.length - 2) : currentLevel + 2].color,
-            }}
-          >
-            <div className="vip-tier-top">
-              <div className="vip-tier-name">{vipLevels[currentLevel >= vipLevels.length - 2 ? currentLevel - (vipLevels.length - 2) : currentLevel + 2].name}</div>
-            </div>
-          </div>
-          
-          {/* Next card (right-3) */}
-          <div 
-            className="vip-tier-card stacked-card right-3" 
-            style={{ 
-              background: vipLevels[currentLevel >= vipLevels.length - 3 ? currentLevel - (vipLevels.length - 3) : currentLevel + 3].color,
-            }}
-          >
-            <div className="vip-tier-top">
-              <div className="vip-tier-name">{vipLevels[currentLevel >= vipLevels.length - 3 ? currentLevel - (vipLevels.length - 3) : currentLevel + 3].name}</div>
-            </div>
-          </div>
+          {vipLevels.map((level, idx) => {
+            // Compute relative position of this card to the currentLevel with wrap-around
+            let rel = (idx - currentLevel) % vipLevels.length;
+            if (rel > vipLevels.length / 2) rel -= vipLevels.length;
+            if (rel < -vipLevels.length / 2) rel += vipLevels.length;
+
+            // Clamp to range [-3, 3]; hide others
+            const hidden = rel < -3 || rel > 3;
+            const className =
+              rel === 0
+                ? 'vip-tier-card main-card pos-0'
+                : rel === -1
+                ? 'vip-tier-card stacked-card pos-n1'
+                : rel === -2
+                ? 'vip-tier-card stacked-card pos-n2'
+                : rel === -3
+                ? 'vip-tier-card stacked-card pos-n3'
+                : rel === 1
+                ? 'vip-tier-card stacked-card pos-p1'
+                : rel === 2
+                ? 'vip-tier-card stacked-card pos-p2'
+                : 'vip-tier-card stacked-card pos-p3';
+
+            return (
+              <div
+                key={idx}
+                className={`${className}${hidden ? ' is-hidden' : ''}`}
+                style={{ background: level.color }}
+              >
+                <div className="vip-tier-top">
+                  <div className="vip-tier-name">{level.name}</div>
+                  {rel === 0 && <button className="vip-intro">VIP Introduction ›</button>}
+                </div>
+                <div className="vip-content">
+                  <div className="vip-content-title text-shadow">{level.name}</div>
+                  <div className="vip-content-sub text-shadow">{level.name}</div>
+                  <div className="vip-content-stat text-shadow">Points >= {formatNumber(level.vipPointsRequired)}</div>
+                  <div className="vip-content-stat text-shadow">Deposit >= {formatNumber(level.depositRequired)}</div>
+                </div>
+                <div className="vip-tier-emblem">
+                  <img src={level.logo} alt={`${level.name} VIP Emblem`} />
+                </div>
+              </div>
+            );
+          })}
         </div>
-        
         <button className="vip-carousel-nav right" onClick={handleNextLevel}>›</button>
       </section>
 
